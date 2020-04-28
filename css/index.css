@@ -1,0 +1,152 @@
+@import url(normalize.css);
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  line-height: 1.5;
+  /* optimize for readability */ }
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Latin Modern Roman', 'FreeSerif', serif, 'HanaMinA', 'Adobe Song Std', 'Source Han Sans', 'WenQuanYi Micro Hei', 'WenQuanYi Zen Hei', 'Meiryo', 'Microsoft JhengHei', 'Microsoft YaHei';
+  font-size: 16px;
+  cursor: default;
+  background: #fffff0;
+  color: black; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+code, kbd {
+  font-family: 'Latin Modern Mono', 'FreeMono', monospace; }
+
+kbd {
+  margin: 1px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px dimgray;
+  background-color: black;
+  color: white; }
+
+table {
+  border-collapse: collapse;
+  margin: 1em; }
+
+table, th, td {
+  border: 1px solid gray;
+  padding: .5em; }
+
+/* Pseudo element: selection */
+::selection {
+  background-color: gainsboro; }
+
+::-moz-selection {
+  background-color: gainsboro; }
+
+article {
+  position: relative;
+  width: 100%;
+  font-size: 1em; }
+
+header {
+  text-align: center;
+  font-variant: small-caps; }
+
+header .subtitle {
+  font-style: normal; }
+
+header address.author {
+  font-style: normal;
+  font-variant: normal; }
+
+nav#TOC {
+  height: 0;
+  margin-top: 1em;
+  border: 1px solid #888;
+  visibility: hidden; }
+
+section#references {
+  font-size: .8em; }
+
+figure {
+  margin: 1em 0;
+  text-align: center; }
+
+/* Contents */
+.main {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100%;
+  width: 60%;
+  margin-left: 20%;
+  padding: 5%; }
+  .main .container {
+    padding-bottom: 5%;
+    flex: 1; }
+
+.footer {
+  font-size: .5em;
+  text-align: right; }
+
+.border-top {
+  border-top: 1px solid black; }
+
+@media (max-width: 1023px), (orientation: portrait) {
+  .main {
+    margin-left: 5%;
+    width: 90%; } }
+
+.tag {
+  opacity: .5;
+  font-size: .8em; }
+
+.float-right {
+  float: right; }
+
+.title2 {
+  border-image: linear-gradient(to right, ivory, firebrick) 4;
+  margin: 2rem 0 .83rem 0;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  text-align: right;
+  font-size: 1.25em;
+  font-variant: small-caps;
+  font-weight: bold; }
+
+code {
+  font-family: 'Latin Modern Mono', 'FreeMono', monospace;
+  line-height: 1.4;
+  font-size: 14px; }
+
+kbd {
+  margin: 1px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px dimgrey;
+  background-color: black;
+  color: white; }
+
+blockquote {
+  background: gainsboro;
+  border-radius: 1em;
+  padding: .25em 1em;
+  font-size: .8em; }
+
+hr {
+  width: 61.8%;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(178, 34, 34, 0.5), rgba(0, 0, 0, 0)); }
+
+table {
+  line-height: 1; }
+
+a {
+  color: firebrick; }
+
+.post-footer {
+  border-top: 1px solid black; }
