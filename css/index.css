@@ -92,9 +92,6 @@ figure {
   font-size: .5em;
   text-align: right; }
 
-.border-top {
-  border-top: 1px solid black; }
-
 @media (max-width: 1023px), (orientation: portrait) {
   .main {
     margin-left: 5%;
@@ -150,3 +147,5 @@ a {
 
 .post-footer {
   border-top: 1px solid black; }
+  .post-footer a {
+    color: black; }
