@@ -1,0 +1,15 @@
+.post-footer {
+  text-align: right;
+  border-top: 1px solid black; }
+  .post-footer a {
+    color: black; }
+
+.cheat-sheet {
+  position: relative; }
+  .cheat-sheet h2, .cheat-sheet pre {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    padding: 10px; }
+  .cheat-sheet code {
+    font-size: 12px; }
