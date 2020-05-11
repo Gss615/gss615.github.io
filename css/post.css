@@ -4,6 +4,10 @@
   .post-footer a {
     color: black; }
 
+@media print {
+  .post-footer {
+    display: none; } }
+
 .cheat-sheet {
   position: relative; }
   .cheat-sheet h2, .cheat-sheet pre {

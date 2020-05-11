@@ -40,7 +40,7 @@
     <h3>目录</h3>
     
     <div class="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是递归"><span class="toc-text">什么是递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归中的调用栈"><span class="toc-text">递归中的调用栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧和思路"><span class="toc-text">技巧和思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是递归"><span class="toc-text">什么是递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归中的调用栈"><span class="toc-text">递归中的调用栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧和思路"><span class="toc-text">技巧和思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#练习题"><span class="toc-text">练习题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用递归实现阶乘-1-2-3…9"><span class="toc-text">用递归实现阶乘 1*2*3…9</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#青蛙跳台阶问题"><span class="toc-text">青蛙跳台阶问题</span></a></li></ol></li></ol>
     </div>
 
 </aside>
@@ -132,33 +132,57 @@ recursion.js:71 end:2
 <li>根据问题和子问题的关系，推导时间复杂</li>
 </ol>
 </blockquote>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>任何大于1的自然数n阶乘<br>用递归实现阶乘 1*2*3<em>…</em>9</p>
-<ol>
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><h3 id="用递归实现阶乘-1-2-3…9"><a href="#用递归实现阶乘-1-2-3…9" class="headerlink" title="用递归实现阶乘 1*2*3…9"></a>用递归实现阶乘 1*2*3<em>…</em>9</h3><ol>
 <li><p>定以函数</p>
-<pre><code class="javascript">function factorial(n){
-// 待写逻辑
-}</code></pre>
-<p>这个函数的功能是求1 到 n 所有数的乘积，也就是n的阶乘，用伪代码实现就是：</p>
-<p>n * (n - 1) * (n - 2) * (n - 3) * … * 1)</p>
+<pre><code class="javascript"> function factorial(n){
+ // TODO 计算
+ }</code></pre>
 </li>
-<li><p>寻找递推关系<br>f(n) = n * (n - 1) * (n - 2) * (n - 3) * … * 1<br>f(n - 1) = (n - 1) * (n - 2) * (n - 3) * … * 1<br>得出问题和子问题的关系为：<br>f(n) = n * f(n -1)</p>
-<pre><code class="javascript">function factorial(n){
- return factorial(n - 1) * n
-}</code></pre>
+<li><p>寻找递推关系</p>
+<p> 这个函数的功能是求n的阶乘，也就是 1 到 n 所有数的乘积<br> $$f(n) = n * (n - 1) * (n - 2) * (n - 3) * … * 1$$<br> 很容易看出 f(n) 和 f(n-1) 的关系为：<br> $$f(n) = f(n-1) * n$$</p>
 </li>
-<li><p>寻找临界值<br>阶乘不能有0，最小值为1，1的乘积还是为1</p>
-<pre><code class="javascript">function factorial(n){
- if(n === 1) return 1
- return factorial(n - 1) * n
-}</code></pre>
+<li><p><strong>寻找临界值</strong></p>
+<p> 阶乘不能有0，最小值为1，1的乘积还是为1<br> $$f(1) = 1$$<br> 得出结论：<br> $$<br> f(n)=\begin{cases}<br> 1,\quad n = 1 \\<br> f(n-1) * n,\quad n &gt; 1<br> \end{cases}<br> $$<br> 将结论转换为代码：</p>
+<pre><code class="javascript"> function factorial(n){
+     if(n === 1) return 1
+     return factorial(n - 1) * n
+ }</code></pre>
 </li>
 <li><p>时间复杂度<br>// …</p>
 </li>
 </ol>
+<h3 id="青蛙跳台阶问题"><a href="#青蛙跳台阶问题" class="headerlink" title="青蛙跳台阶问题"></a><a href="https://leetcode-cn.com/problems/climbing-stairs/" target="_blank" rel="noopener">青蛙跳台阶问题</a></h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 <code>n</code> 级的台阶总共有多少种跳法。</p>
+<p>提示：0 &lt;= n &lt;= 100</p>
+<ol>
+<li><p>定义函数 climbStairs</p>
+<pre><code class="javascript">function climbStairs(n){
+ // TODO
+}</code></pre>
+</li>
+<li><p>寻找递推关系</p>
+<p>假设跳上 n 级台阶有f(n)种跳法，在所有跳法中，青蛙的最后一步只有两种情况：跳了 1 阶或跳了 2 阶</p>
+<ol>
+<li>当为 1 阶台阶：剩 n - 1 个台阶，这种情况共有 f(n - 1) 种跳法；</li>
+<li>当为 2 阶台阶：剩 n - 2 个台阶，这种情况共有 f(n - 2) 种跳法。</li>
+</ol>
+<p>f(n) 为以上两种情况当和，得出结论为:</p>
+<p>$$f(n) = f(n - 1） + f(n - 2)$$</p>
+</li>
+<li><p>寻找临界值</p>
+<p>n 为 0 时，f(0) = 1</p>
+<p>n 为 1 时，f(1) = 1<br>$$<br>f(n)=\begin{cases}<br>1,\quad n = 0 \\<br>1,\quad n = 1 \\<br>f(n-1) + f(n-2),\quad n &gt; 2<br>\end{cases}<br>$$<br>将结论转换为代码</p>
+<pre><code class="javascript">functionn climbStairs(n){
+  if(n === 0 || n === 1) return 1
+  return f(n - 1) + f(n - 2)
+}</code></pre>
+</li>
+<li><p>空间复杂度</p>
+<p>算法时间复杂度为 O(2^n)</p>
+<p><a href="https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/</a></p>
+</li>
+</ol>
 <p>TODO 树中到递归</p>
-<p>求二叉树的最大深度<br>Simple inline $$a = b + c$$.<br>Simple inline $a = b + c$.</p>
-<hr>
-<p> \(a+b=c\)</p>
+<p>求二叉树的最大深度</p>
 
             </article>
         </mian>
@@ -183,5 +207,20 @@ recursion.js:71 end:2
  
 <!-- <script>hljs.initHighlightingOnLoad();</script> -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
